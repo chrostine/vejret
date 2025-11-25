@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* eller 500, 700 osv. */
+  font-style: normal;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.fade.show {
+  opacity: 1;
+}
+
+button{
+  padding: 10px;
+  margin: 5px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#labels{
+  
+}
+
+#weatherInfo{
+  display: grid;
+  justify-items: center;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#iconTogglePanel{
+  padding-top: 35px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+#phone-box{
+  width: 480px;
+  height: 800px;
+  background-color: #d5efff;
+  border-style: solid;
+  border-radius: 40px;
+  border-color: black;
+}
+
+#phone{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Lag_3{
+  padding: 30px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
