@@ -2,15 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link rel="icon" type="image/svg+xml" href="/sol.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>project</title>
+    <title>Vejret</title>
   </head>
   <body>
     <div id="phone">
       <div id="phone-box">
         <div id="iconTogglePanel">
-          <h3>vejret</h3>
           <div id="labels">
             <button onclick="enableSemanticIcon('sol sky glowSkygge')">Delvist skolskin</button>
             <button onclick="enableSemanticIcon('sky morkSkygge sne')">Sne</button>
@@ -20,6 +19,9 @@
             <button onclick="enableSemanticIcon('morkSky overskyet')">Truende skyet</button>
             <button onclick="enableSemanticIcon('morkSky lyn_x5F_regn')">Torden</button>
             <button onclick="enableSemanticIcon('sol1')">Sol</button>
+          </div>
+          <div id="lokation">
+            <p id="weatherLocation"></p>
           </div>
           <!-- her ligger svg-filerne -->
           <svg id="Lag_3" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 443.3 294.2">
@@ -140,7 +142,6 @@
             </g>
           </svg>
           <div id="weatherInfo">
-            <p id="weatherLocation"></p>
             <p id="weatherDescription"></p>
             <p id="weatherTemp"></p>
           </div>

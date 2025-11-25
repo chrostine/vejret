@@ -31,25 +31,31 @@ button{
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-}
-
-#labels{
-  
+  transition: transform 300ms
 }
 
 #weatherInfo{
-  display: grid;
-  justify-items: center;
+  font-size: larger;
+  text-align: center;
+  background-color: #CAE6F7 ;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.001), 0 0 20px 0 rgba(0, 0, 0, 0.15);
+}
+#lokation{
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
   transform: scale(1.1);
+  transition: transform 300ms
 }
 
 #iconTogglePanel{
-  padding-top: 35px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding: 35px;
 }
 
 #phone-box{
@@ -59,6 +65,7 @@ button:hover {
   border-style: solid;
   border-radius: 40px;
   border-color: black;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #phone{
@@ -70,7 +77,9 @@ button:hover {
 
 #Lag_3{
   padding: 30px;
+  padding-bottom: 50px;;
   display: grid;
   justify-content: center;
   align-items: center;
+  
 }

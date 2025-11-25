@@ -50,7 +50,7 @@ window.enableSemanticIcon = function (partsToEnable) {
 //  WEATHER API DEL
 // **********************
 
-const API_KEY = '7d7d91c7a4a22c8e8bb2501ab77012e9'
+const API_KEY = 'd5d7678dc16f0c0d6044768ea7540ad8'
 const DEFAULT_CITY = 'Copenhagen,DK'
 
 async function fetchWeather(city = DEFAULT_CITY) {
@@ -77,28 +77,23 @@ function mapWeatherToIconPreset(weatherData) {
   const desc = (w.description || '').toLowerCase()
 
   if (main === 'Clear') {
-    // klar himmel → sol
     return 'sol1'
   }
 
   if (main === 'Clouds') {
     if (desc.includes('few') || desc.includes('scattered')) {
-      // let/ spredt skydække
       return 'sol sky glowSkygge'
     }
     if (desc.includes('broken') || desc.includes('overcast')) {
-      // mere massiv skydække
-      return 'sky morkSkygge'
+      return 'morkSky overskyet'
     }
     return 'sky morkSkygge'
   }
 
   if (main === 'Rain' || main === 'Drizzle') {
     if (desc.includes('light') || desc.includes('shower')) {
-      // lidt regn, måske sol
       return 'sol sky glowSkygge regn1'
     }
-    // kraftigere regn
     return 'morkSky regn1'
   }
 
@@ -111,14 +106,13 @@ function mapWeatherToIconPreset(weatherData) {
   }
 
   if (main === 'Mist' || main === 'Fog' || main === 'Haze') {
-    return 'overskyet'
+    return 'morkSky overskyet'
   }
 
   // fallback
   return 'sky morkSkygge'
 }
 
-// Skriv tekst under ikonet
 function updateWeatherText(weatherData) {
   const locEl = document.getElementById('weatherLocation')
   const descEl = document.getElementById('weatherDescription')
@@ -139,7 +133,6 @@ function updateWeatherText(weatherData) {
   if (tempEl) tempEl.textContent = `${temp}°C`
 }
 
-// Hent vejret og opdater ikon + tekst
 async function loadAndShowWeather(city) {
   const data = await fetchWeather(city)
   const preset = mapWeatherToIconPreset(data)
@@ -153,9 +146,4 @@ async function loadAndShowWeather(city) {
 // **********************
 
 hideAllWeatherElements()
-
-// Kald API’en når siden loader
-loadAndShowWeather()   // bruger DEFAULT_CITY
-
-// (valgfrit) genindlæs fx hvert 10. minut
-// setInterval(() => loadAndShowWeather(), 10 * 60 * 1000)
+loadAndShowWeather()  
